@@ -55,11 +55,18 @@ print(names(dataFramesCopList[[1]]))
 listOfPS_CPVectors_FromData <- lapply(dataFramesList, function(x) x[, "pS - cP"])
 listOfCP_Vectors_FromData <- lapply(dataFramesList, function(x) x[, "cP"])
 listOfA_Vectors_FromData <- lapply(dataFramesList, function(x) x[, "a"])
+list2env(listOfPS_CPVectors_FromData, envir = .GlobalEnv)
+list2env(listOfCP_Vectors_FromData, envir = .GlobalEnv)
+list2env(listOfA_Vectors_FromData, envir = .GlobalEnv)
 
 listOfPS_CPVectors_FromCopData <- lapply(dataFramesCopList, function(x) x[, "pS - cP - cT"])
 listOfCP_Vectors_FromCopData <- lapply(dataFramesCopList, function(x) x[, "cP"])
 listOfCT_Vectors_FromCopData <- lapply(dataFramesCopList, function(x) x[, "cT"])
 listOfA_Vectors_FromCopData <- lapply(dataFramesCopList, function(x) x[, "a"])
+list2env(listOfPS_CPVectors_FromCopData, envir = .GlobalEnv)
+list2env(listOfCP_Vectors_FromCopData, envir = .GlobalEnv)
+list2env(listOfCT_Vectors_FromCopData, envir = .GlobalEnv)
+list2env(listOfA_Vectors_FromCopData, envir = .GlobalEnv)
 
 mean_ps_cpvector <- rowMeans(sapply(listOfPS_CPVectors_FromData, function(x) x))
 mean_cpvector <- rowMeans(sapply(listOfCP_Vectors_FromData, function(x) x))
@@ -78,6 +85,28 @@ png(file = paste("line_chart__mean_", fileNames[1], ".jpg"), width = 2000, heigh
 
 # Combining the two graphs to the same page
 par(mfrow = c(2, 1))
+
+# Plot the bar chart.
+plot(timevector, mean_ps_cpvectorcop, type = "o", col = "red",
+     xlim = c(0, maxTimeStep), ylim = c(0, populationSize),
+     xlab = "Time", ylab = "Farming (red) and nonFarming (blue)",
+     main = "Farming and nonfarming - copulation")
+
+lines(timevector, mean_cpvectorcop, type = "o", col = "blue")
+lines(timevector, mean_ctvectorcop, type = "o", col = "yellow")
+lines(timevector, mean_avectorcop, type = "o", col = "black")
+
+# Plot the bar chart.
+plot(timevector, mean_ps_cpvector, type = "o", col = "red",
+     xlim = c(0, maxTimeStep), ylim = c(0, populationSize),
+     xlab = "Time", ylab = "Farming (red) and nonFarming (blue)",
+     main = "Farming and nonfarming - no copulation")
+
+lines(timevector, mean_cpvector, type = "o", col = "blue")
+lines(timevector, mean_avector, type = "o", col = "black")
+
+# Save the file.
+dev.off()
 
 #print(length(listOfA_Vectors_FromData))
 #print(length(dataFramesList))
