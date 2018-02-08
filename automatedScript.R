@@ -1,5 +1,6 @@
 #read file names from command line
 fileNames = commandArgs(trailingOnly = TRUE)
+print(fileNames)
 
 #set working directory
 directoryPath <- paste("C:\\Users\\Judit\\Documents\\mitochondriacopulation\\Results\\", fileNames[1], sep = "")
@@ -14,14 +15,19 @@ populationSize <- configData[4, "V1"]
 #read the dat files -> dataframes
 #create list of dataframes
 if ((length(fileNames) %% 2) == 1) {
-    dataFramesList <- lapply(fileNames[2: ((length(fileNames) / 2) - 0.5)], function(x) read.delim(x, FALSE, " "))
+    print(length(fileNames))
+    print(length(fileNames) / 2)
+    dataFramesList <- lapply(fileNames[2:((length(fileNames) / 2) + 0.5)], function(x) read.delim(x, FALSE, " "))
+    print(fileNames[2:((length(fileNames) / 2) + 0.5)])
     names(dataFramesList) <- paste("data", 1:length(dataFramesList), sep = "")
     list2env(dataFramesList, envir = .GlobalEnv)
 
-    dataFramesCopList <- lapply(fileNames[((length(fileNames) / 2) + 0.5) : length(fileNames)], function(x) read.delim(x, FALSE, " "))
+    dataFramesCopList <- lapply(fileNames[((length(fileNames) / 2) + 1.5):length(fileNames)], function(x) read.delim(x, FALSE, " "))
+    print(fileNames[((length(fileNames) / 2) + 1.5):length(fileNames)])
     names(dataFramesCopList) <- paste("dataFramesCop", 1:(length(dataFramesCopList)), sep = "")
     list2env(dataFramesCopList, envir = .GlobalEnv)
 } else {
+    print(length(fileNames))
     dataFramesList <- lapply(fileNames[2:(length(fileNames) / 2)], function(x) read.delim(x, FALSE, " "))
     names(dataFramesList) <- paste("data", 1:length(dataFramesList), sep = "")
     list2env(dataFramesList, envir = .GlobalEnv)
@@ -42,6 +48,15 @@ columnNamesDataCop <- c("t", "a", "pS - cP - cT", "cP", "cT",
          "mean(size)", "sd(size)", "mean(farm)", "sd(farm)",
          "meanf(harvest)", "sdf(harvest)", "meanf(farming)", "sdf(farming)", "meanf(cost)", "sdf(cost)")
 
+print(dataFramesCopList[[1]][1, ])
+print(length(dataFramesList[[1]]))
+print(length(columnNamesData))
+print(length(dataFramesCopList[[1]]))
+print(length(columnNamesDataCop))
+#print(dataFramesCopList[[1]])
+
+
+#dataFramesList <- lapply(dataFramesList, function(x)colnames(data) <- c(columnNamesData))
 #naming each column in each dataframe
 dataFramesList <- lapply(dataFramesList, setNames, columnNamesData)
 list2env(dataFramesList, .GlobalEnv)
@@ -74,7 +89,7 @@ mean_avector <- rowMeans(sapply(listOfA_Vectors_FromData, function(x) x))
 
 mean_ps_cpvectorcop <- rowMeans(sapply(listOfPS_CPVectors_FromCopData, function(x) x))
 mean_cpvectorcop <- rowMeans(sapply(listOfCP_Vectors_FromCopData, function(x) x))
-#mean_ctvectorcop <- rowMeans(sapply(listOfCT_Vectors_FromCopData, function(x) x))
+mean_ctvectorcop <- rowMeans(sapply(listOfCT_Vectors_FromCopData, function(x) x))
 mean_avectorcop <- rowMeans(sapply(listOfA_Vectors_FromCopData, function(x) x))
 
 timevector <- dataFramesList[[1]][, "t"]
