@@ -1,13 +1,15 @@
 #read file names from command line
+print("r began")
 fileNames = commandArgs(trailingOnly = TRUE)
 print(fileNames)
 
 #set working directory
 directoryPath <- paste("C:\\Users\\Judit\\Documents\\mitochondriacopulation\\Results\\", fileNames[1], sep = "")
 setwd(directoryPath)
+print(directoryPath)
 
 #read config data
-configData <- read.delim("parametersCopulate.cfg", FALSE, "/")
+configData <- read.delim("parameters.cfg", FALSE, "/")
 
 maxTimeStep <- configData[2, "V1"]
 populationSize <- configData[4, "V1"]
@@ -68,6 +70,10 @@ list2env(dataFramesCopList, .GlobalEnv)
 print(names(dataFramesCopList[[1]]))
 
 listOfPS_CPVectors_FromData <- lapply(dataFramesList, function(x) x[, "pS - cP"])
+print(paste("ListLength: ",length(listOfPS_CPVectors_FromData)))
+print(length(listOfPS_CPVectors_FromData[1]))
+print(listOfPS_CPVectors_FromData)
+#print(listOfPS_CPVectors_FromData[[1]][1:3, 3])
 listOfCP_Vectors_FromData <- lapply(dataFramesList, function(x) x[, "cP"])
 listOfA_Vectors_FromData <- lapply(dataFramesList, function(x) x[, "a"])
 list2env(listOfPS_CPVectors_FromData, envir = .GlobalEnv)
@@ -108,7 +114,7 @@ plot(timevector, mean_ps_cpvectorcop, type = "o", col = "red",
      main = "Farming and nonfarming - copulation")
 
 lines(timevector, mean_cpvectorcop, type = "o", col = "blue")
-lines(timevector, mean_ctvectorcop, type = "o", col = "yellow")
+lines(timevector, mean_ctvectorcop, type = "o", col = "green")
 lines(timevector, mean_avectorcop, type = "o", col = "black")
 
 # Plot the bar chart.
