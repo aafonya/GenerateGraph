@@ -1,0 +1,519 @@
+libmpc-3.dll
+
+
+Microsoft Windows [Version 6.3.9600]
+(c) 2013 Microsoft Corporation. All rights reserved.
+
+C:\Users\Judit>gcc --version
+gcc (MinGW.org GCC-6.3.0-1) 6.3.0
+Copyright (C) 2016 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+C:\Users\Judit>g++ --version
+'g++' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Judit>gdb --version
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+
+C:\Users\Judit>cd ..
+
+C:\Users>gcc --version
+gcc (MinGW.org GCC-6.3.0-1) 6.3.0
+Copyright (C) 2016 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+C:\Users>cd Judit
+
+C:\Users\Judit>cd Documents
+
+C:\Users\Judit\Documents>cd Mitochondria
+
+C:\Users\Judit\Documents\Mitochondria>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 4A39-A2FA
+
+ Directory of C:\Users\Judit\Documents\Mitochondria
+
+2017.10.03.  15:15    <DIR>          .
+2017.10.03.  15:15    <DIR>          ..
+2017.10.03.  15:12            15 650 mitochondria18.c
+2017.10.03.  15:13               899 parameters.cfg
+2017.10.03.  15:13             2 209 randomGenerator.c
+               3 File(s)         18 758 bytes
+               2 Dir(s)  49 687 195 648 bytes free
+
+C:\Users\Judit\Documents\Mitochondria>gcc --help
+Usage: gcc [options] file...
+Options:
+  -pass-exit-codes         Exit with highest error code from a phase.
+  --help                   Display this information.
+  --target-help            Display target specific command line options.
+  --help={common|optimizers|params|target|warnings|[^]{joined|separate|undocumen
+ted}}[,...].
+                           Display specific types of command line options.
+  (Use '-v --help' to display command line options of sub-processes).
+  --version                Display compiler version information.
+  -dumpspecs               Display all of the built in spec strings.
+  -dumpversion             Display the version of the compiler.
+  -dumpmachine             Display the compiler's target processor.
+  -print-search-dirs       Display the directories in the compiler's search path
+.
+  -print-libgcc-file-name  Display the name of the compiler's companion library.
+
+  -print-file-name=<lib>   Display the full path to library <lib>.
+  -print-prog-name=<prog>  Display the full path to compiler component <prog>.
+  -print-multiarch         Display the target's normalized GNU triplet, used as
+                           a component in the library path.
+  -print-multi-directory   Display the root directory for versions of libgcc.
+  -print-multi-lib         Display the mapping between command line options and
+                           multiple library search directories.
+  -print-multi-os-directory Display the relative path to OS libraries.
+  -print-sysroot           Display the target libraries directory.
+  -print-sysroot-headers-suffix Display the sysroot suffix used to find headers.
+
+  -Wa,<options>            Pass comma-separated <options> on to the assembler.
+  -Wp,<options>            Pass comma-separated <options> on to the preprocessor
+.
+  -Wl,<options>            Pass comma-separated <options> on to the linker.
+  -Xassembler <arg>        Pass <arg> on to the assembler.
+  -Xpreprocessor <arg>     Pass <arg> on to the preprocessor.
+  -Xlinker <arg>           Pass <arg> on to the linker.
+  -save-temps              Do not delete intermediate files.
+  -save-temps=<arg>        Do not delete intermediate files.
+  -no-canonical-prefixes   Do not canonicalize paths when building relative
+                           prefixes to other gcc components.
+  -pipe                    Use pipes rather than intermediate files.
+  -time                    Time the execution of each subprocess.
+  -specs=<file>            Override built-in specs with the contents of <file>.
+  -std=<standard>          Assume that the input sources are for <standard>.
+  --sysroot=<directory>    Use <directory> as the root directory for headers
+                           and libraries.
+  -B <directory>           Add <directory> to the compiler's search paths.
+  -v                       Display the programs invoked by the compiler.
+  -###                     Like -v but options quoted and commands not executed.
+
+  -E                       Preprocess only; do not compile, assemble or link.
+  -S                       Compile only; do not assemble or link.
+  -c                       Compile and assemble, but do not link.
+  -o <file>                Place the output into <file>.
+  -pie                     Create a position independent executable.
+  -shared                  Create a shared library.
+  -x <language>            Specify the language of the following input files.
+                           Permissible languages include: c c++ assembler none
+                           'none' means revert to the default behavior of
+                           guessing the language based on the file's extension.
+
+Options starting with -g, -f, -m, -O, -W, or --param are automatically
+ passed on to the various sub-processes invoked by gcc.  In order to pass
+ other options on to these processes the -W<letter> options must be used.
+
+For bug reporting instructions, please see:
+<http://gcc.gnu.org/bugs.html>.
+
+C:\Users\Judit\Documents\Mitochondria>gcc -Wall mitochondria18.c randomGenerator
+.c -o mito
+
+C:\Users\Judit\Documents\Mitochondria>mingw-get install mpc
+http://prdownloads.sourceforge.net/mingw/libgmpxx-6.1.2-2-mingw32-dll-4.tar.xz?d
+ownload
+17.78 kB / 17.78 kB     |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/gmp-6.1.2-2-mingw32-dev.tar.xz?download
+
+262.00 kB / 262.00 kB   |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/libmpfr-3.1.5-1-mingw32-dll-4.tar.xz?do
+wnload
+141.48 kB / 141.48 kB   |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/mpfr-3.1.5-1-mingw32-dev.tar.xz?downloa
+d
+181.71 kB / 181.71 kB   |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/libmpc-1.0.3-1-mingw32-dll-3.tar.xz?dow
+nload
+36.89 kB / 36.89 kB     |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/mpc-1.0.3-1-mingw32-dev.tar.xz?download
+
+44.31 kB / 44.31 kB     |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/mpc-1.0.3-1-mingw32-info.tar.xz?downloa
+d
+20.57 kB / 20.57 kB     |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/mpc-1.0.3-1-mingw32-lic.tar.xz?download
+
+2.67 kB / 2.67 kB       |================================================| 100%
+install: libgmpxx-6.1.2-2-mingw32-dll-4.tar.xz
+ installing libgmpxx-6.1.2-2-mingw32-dll-4.tar.xz
+install: gmp-6.1.2-2-mingw32-dev.tar.xz
+ installing gmp-6.1.2-2-mingw32-dev.tar.xz
+install: libmpfr-3.1.5-1-mingw32-dll-4.tar.xz
+ installing libmpfr-3.1.5-1-mingw32-dll-4.tar.xz
+install: mpfr-3.1.5-1-mingw32-dev.tar.xz
+ installing mpfr-3.1.5-1-mingw32-dev.tar.xz
+install: libmpc-1.0.3-1-mingw32-dll-3.tar.xz
+ installing libmpc-1.0.3-1-mingw32-dll-3.tar.xz
+install: mpc-1.0.3-1-mingw32-dev.tar.xz
+ installing mpc-1.0.3-1-mingw32-dev.tar.xz
+install: mpc-1.0.3-1-mingw32-doc.tar
+ installing mpc-1.0.3-1-mingw32-doc.tar
+install: mpc-1.0.3-1-mingw32-info.tar.xz
+ installing mpc-1.0.3-1-mingw32-info.tar.xz
+install: mpc-1.0.3-1-mingw32-lic.tar.xz
+ installing mpc-1.0.3-1-mingw32-lic.tar.xz
+
+C:\Users\Judit\Documents\Mitochondria>gcc -Wall mitochondria18.c randomGenerator
+.c -o mito
+mitochondria18.c:15:33: fatal error: gsl/gsl_permutation.h: No such file or dire
+ctory
+ #include <gsl/gsl_permutation.h>
+                                 ^
+compilation terminated.
+
+C:\Users\Judit\Documents\Mitochondria> .
+'.' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Judit\Documents\Mitochondria> ..
+'..' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Judit\Documents\Mitochondria>cd .
+
+C:\Users\Judit\Documents\Mitochondria>gcc test.c -Wall -I"C:\Users\Rohan\Desktop
+\GnuWin32\include" -L"C:\Users\Rohan\Desktop\GnuWin32\lib" -lgslcblas -lgsl -lm
+-o test
+gcc: error: test.c: No such file or directory
+
+C:\Users\Judit\Documents\Mitochondria>
+C:\Users\Judit\Documents\Mitochondria>    ^^^^^^  (put this first)
+'^^^' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Judit\Documents\Mitochondria>gcc mitochondria18.c -Wall -I"C:\Users\Jud
+it\Documents\Mitochondria" -L"C:\Users\Judit\Documents\Mitochondria\gsl_win\lib"
+ -lgslcblas -lgsl -lm -o test
+mitochondria18.c:15:33: fatal error: gsl/gsl_permutation.h: No such file or dire
+ctory
+ #include <gsl/gsl_permutation.h>
+                                 ^
+compilation terminated.
+
+C:\Users\Judit\Documents\Mitochondria>gcc mitochondria18.c -Wall -I"C:\Users\Jud
+it\Documents\Mitochondria" -L"C:\Users\Judit\Documents\Mitochondria\gsl_win\" -l
+gslcblas -lgsl -lm -o test
+mitochondria18.c:15:33: fatal error: gsl/gsl_permutation.h: No such file or dire
+ctory
+ #include <gsl/gsl_permutation.h>
+                                 ^
+compilation terminated.
+
+C:\Users\Judit\Documents\Mitochondria>gcc mitochondria18.c -Wall -I"C:\Users\Jud
+it\Documents\Mitochondria" -L"C:\Users\Judit\Documents\Mitochondria\gsl" -lgslcb
+las -lgsl -lm -o test
+mitochondria18.c:15:33: fatal error: gsl/gsl_permutation.h: No such file or dire
+ctory
+ #include <gsl/gsl_permutation.h>
+                                 ^
+compilation terminated.
+
+C:\Users\Judit\Documents\Mitochondria>
+C:\Users\Judit\Documents\Mitochondria>gcc mitochondria18.c -Wall -I"C:\Users\Jud
+it\Documents\Mitochondria" -L"C:\Users\Judit\Documents\Mitochondria\" -lgslcblas
+ -lgsl -lm -o test
+mitochondria18.c:15:33: fatal error: gsl/gsl_permutation.h: No such file or dire
+ctory
+ #include <gsl/gsl_permutation.h>
+                                 ^
+compilation terminated.
+
+C:\Users\Judit\Documents\Mitochondria>gcc mitochondria18.c -Wall -I"C:\Users\Jud
+it\Documents\Mitochondria" -L"C:\Users\Judit\Documents\Mitochondria" -lgslcblas
+-lgsl -lm -o testlm -o test
+mitochondria18.c:15:33: fatal error: gsl/gsl_permutation.h: No such file or dire
+ctory
+ #include <gsl/gsl_permutation.h>
+                                 ^
+compilation terminated.
+
+C:\Users\Judit\Documents\Mitochondria>gcc mitochondria18.c -Wall -I"C:\Users\Jud
+it\Documents\Mitochondria" -L"C:\Users\Judit\Documents\Mitochondria" -lgslcblas
+-lgsl -lm -o testlm -o test
+mitochondria18.c:15:33: fatal error: gsl\gsl_permutation.h: No such file or dire
+ctory
+ #include <gsl\gsl_permutation.h>
+                                 ^
+compilation terminated.
+
+C:\Users\Judit\Documents\Mitochondria>
+
+C:\Users\Judit\Documents\Mitochondria>gcc -o $(NAME_PART).exe $(NAME_PART).c -O3
+ -std=gnu99 -Wall -Wno-unused -LC:\Users\Judit\Documents\Mitochondria\gsl-1.8-li
+b\lib -IC:\Users\Judit\Documents\Mitochondria\gsl-1.8-lib\include -I C:\Users\Ju
+dit\Documents\Mitochondria
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+Microsoft Windows [Version 6.3.9600]
+(c) 2013 Microsoft Corporation. All rights reserved.
+
+C:\Users\Judit>cd C:\Users\Judit\Documents\Mitochondria
+
+C:\Users\Judit\Documents\Mitochondria>gcc mitochondria18.c -Wall -I"C:\Users\Jud
+
+mitochondria18.c:15:39: fatal error: gsl_1/gsl/gsl_permutation.h: No such file o
+r directory
+ #include <gsl_1/gsl/gsl_permutation.h>
+                                       ^
+compilation terminated.
+
+C:\Users\Judit\Documents\Mitochondria>it\Documents\Mitochondria" -L"C:\Users\Jud
+it\Documents\Mitochondria" -lgslcblas
+The filename, directory name, or volume label syntax is incorrect.
+
+C:\Users\Judit\Documents\Mitochondria>-lgsl -lm -o testlm -o test
+'-lgsl' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Judit\Documents\Mitochondria>gcc mitochondria18.c -Wall -I"C:\Users\Jud
+
+mitochondria18.c:15:39: fatal error: gsl_1/gsl/gsl_permutation.h: No such file o
+r directory
+ #include <gsl_1/gsl/gsl_permutation.h>
+                                       ^
+compilation terminated.
+
+C:\Users\Judit\Documents\Mitochondria>it\Documents\Mitochondria" -L"C:\Users\Jud
+it\Documents\Mitochondria" -lgslcblas
+The filename, directory name, or volume label syntax is incorrect.
+
+C:\Users\Judit\Documents\Mitochondria>-lgsl -lm -o testlm -o test
+'-lgsl' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Judit\Documents\Mitochondria>gcc -o $(NAME_PART).exe $(NAME_PART).c -O3
+ -std=gnu99 -Wall -Wno-unused -LC:\Users\Judit\Documents\Mitochondria\gsl-1.8-li
+b\lib -IC:\Users\Judit\Documents\Mitochondria\gsl-1.8-lib\include -I C:\Users\Ju
+dit\Documents\Mitochondria
+gcc: error: $(NAME_PART).c: No such file or directory
+gcc: fatal error: no input files
+compilation terminated.
+
+C:\Users\Judit\Documents\Mitochondria>gcc -o C:\Users\Judit\Documents\Mitochondr
+ia\mitochondria18.c -O3 -std=gnu99 -Wall -Wno-unused -LC:\Users\Judit\Documents\
+Mitochondria\gsl-1.8-lib\lib -IC:\Users\Judit\Documents\Mitochondria\gsl-1.8-lib
+\include -I C:\Users\Judit\Documents\Mitochondria
+gcc: fatal error: no input files
+compilation terminated.
+
+C:\Users\Judit\Documents\Mitochondria>gcc -o $(NAME_PART).exe $(NAME_PART).c -O3
+
+gcc: error: $(NAME_PART).c: No such file or directory
+gcc: fatal error: no input files
+compilation terminated.
+
+C:\Users\Judit\Documents\Mitochondria> -std=gnu99 -Wall -Wno-unused -LC:\Users\J
+udit\Documents\Mitochondria\gsl-1.8-li
+'-std' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Judit\Documents\Mitochondria>b\lib -IC:\Users\Judit\Documents\Mitochond
+ria\gsl-1.8-lib\include -I C:\Users\Ju
+The system cannot find the path specified.
+
+C:\Users\Judit\Documents\Mitochondria>gcc -o C:\Users\Judit\Documents\Mitochondr
+ia\mitochondria18.c -O3 -std=gnu99 -Wall -Wno-unused -LC:\Users\Judit\Documents\
+Mitochondria\gsl-1.8-lib\lib -IC:\Users\Judit\Documents\Mitochondria\gsl-1.8-lib
+\include -IC:\Users\Judit\Documents\Mitochondria
+gcc: fatal error: no input files
+compilation terminated.
+
+C:\Users\Judit\Documents\Mitochondria>gcc -o m.exe mitochondria18.c -O3 -std=gnu
+99 -Wall -Wno-unused -LC:\Users\Judit\Documents\Mitochondria\gsl-1.8-lib\lib -IC
+:\Users\Judit\Documents\Mitochondria\gsl-1.8-lib\include -IC:\Users\Judit\Docume
+nts\Mitochondria
+mitochondria18.c: In function 'main':
+mitochondria18.c:258:4: warning: this 'for' clause does not guard... [-Wmisleadi
+ng-indentation]
+    for(i = 0; i < ps; i++) printf("%d\t",  size[i]);    printf("\n");
+    ^~~
+mitochondria18.c:258:57: note: ...this statement, but the latter is misleadingly
+ indented as if it is guarded by the 'for'
+    for(i = 0; i < ps; i++) printf("%d\t",  size[i]);    printf("\n");
+                                                         ^~~~~~
+mitochondria18.c:259:4: warning: this 'for' clause does not guard... [-Wmisleadi
+ng-indentation]
+    for(i = 0; i < ps; i++) printf("%d\t",  farm[i]);    printf("\n");
+    ^~~
+mitochondria18.c:259:57: note: ...this statement, but the latter is misleadingly
+ indented as if it is guarded by the 'for'
+    for(i = 0; i < ps; i++) printf("%d\t",  farm[i]);    printf("\n");
+                                                         ^~~~~~
+mitochondria18.c:260:4: warning: this 'for' clause does not guard... [-Wmisleadi
+ng-indentation]
+    for(i = 0; i < ps; i++) printf("%lf\t", harvest[i]); printf("\n");
+    ^~~
+mitochondria18.c:260:57: note: ...this statement, but the latter is misleadingly
+ indented as if it is guarded by the 'for'
+    for(i = 0; i < ps; i++) printf("%lf\t", harvest[i]); printf("\n");
+                                                         ^~~~~~
+mitochondria18.c:261:4: warning: this 'for' clause does not guard... [-Wmisleadi
+ng-indentation]
+    for(i = 0; i < ps; i++) printf("%lf\t", farming[i]); printf("\n");
+    ^~~
+mitochondria18.c:261:57: note: ...this statement, but the latter is misleadingly
+ indented as if it is guarded by the 'for'
+    for(i = 0; i < ps; i++) printf("%lf\t", farming[i]); printf("\n");
+                                                         ^~~~~~
+mitochondria18.c:262:4: warning: this 'for' clause does not guard... [-Wmisleadi
+ng-indentation]
+    for(i = 0; i < ps; i++) printf("%lf\t", cost[i]);    printf("\n");
+    ^~~
+mitochondria18.c:262:57: note: ...this statement, but the latter is misleadingly
+ indented as if it is guarded by the 'for'
+    for(i = 0; i < ps; i++) printf("%lf\t", cost[i]);    printf("\n");
+                                                         ^~~~~~
+C:\Users\Judit\AppData\Local\Temp\cca4gNkW.o:mitochondria18.c:(.text.startup+0x6
+3d): undefined reference to `gsl_rng_mt19937'
+C:\Users\Judit\AppData\Local\Temp\cca4gNkW.o:mitochondria18.c:(.text.startup+0x6
+45): undefined reference to `gsl_rng_alloc'
+C:\Users\Judit\AppData\Local\Temp\cca4gNkW.o:mitochondria18.c:(.text.startup+0x6
+5d): undefined reference to `gsl_rng_set'
+C:\Users\Judit\AppData\Local\Temp\cca4gNkW.o:mitochondria18.c:(.text.startup+0x7
+59): undefined reference to `gsl_ran_gaussian'
+C:\Users\Judit\AppData\Local\Temp\cca4gNkW.o:mitochondria18.c:(.text.startup+0x7
+d5): undefined reference to `gsl_ran_gaussian'
+C:\Users\Judit\AppData\Local\Temp\cca4gNkW.o:mitochondria18.c:(.text.startup+0x8
+25): undefined reference to `gsl_ran_gaussian'
+C:\Users\Judit\AppData\Local\Temp\cca4gNkW.o:mitochondria18.c:(.text.startup+0x8
+83): undefined reference to `gsl_ran_gaussian'
+C:\Users\Judit\AppData\Local\Temp\cca4gNkW.o:mitochondria18.c:(.text.startup+0x1
+4bf): undefined reference to `gsl_ran_gaussian'
+C:\Users\Judit\AppData\Local\Temp\cca4gNkW.o:mitochondria18.c:(.text.startup+0x1
+729): undefined reference to `gsl_rng_free'
+C:\Users\Judit\AppData\Local\Temp\cca4gNkW.o:mitochondria18.c:(.text.startup+0x1
+76d): undefined reference to `gsl_ran_gaussian'
+C:\Users\Judit\AppData\Local\Temp\cca4gNkW.o:mitochondria18.c:(.text.startup+0x1
+7d1): undefined reference to `gsl_ran_gaussian'
+C:\Users\Judit\AppData\Local\Temp\cca4gNkW.o:mitochondria18.c:(.text.startup+0x2
+1aa): undefined reference to `gsl_ran_gaussian'
+C:\Users\Judit\AppData\Local\Temp\cca4gNkW.o:mitochondria18.c:(.text.startup+0x2
+316): undefined reference to `gsl_ran_gaussian'
+C:\Users\Judit\AppData\Local\Temp\cca4gNkW.o:mitochondria18.c:(.text.startup+0x2
+39f): undefined reference to `gsl_ran_gaussian'
+collect2.exe: error: ld returned 1 exit status
+
+C:\Users\Judit\Documents\Mitochondria>gcc -o m.exe mitochondria18.c -O3 -std=gnu
+99 -Wall -Wno-unused -LC:\Users\Judit\Documents\Mitochondria\gsl-1.8-lib\lib -lm
+ -lgsl -IC:\Users\Judit\Documents\Mitochondria\gsl-1.8-lib\include -IC:\Users\Ju
+dit\Documents\Mitochondria
+mitochondria18.c: In function 'main':
+mitochondria18.c:258:4: warning: this 'for' clause does not guard... [-Wmisleadi
+ng-indentation]
+    for(i = 0; i < ps; i++) printf("%d\t",  size[i]);    printf("\n");
+    ^~~
+mitochondria18.c:258:57: note: ...this statement, but the latter is misleadingly
+ indented as if it is guarded by the 'for'
+    for(i = 0; i < ps; i++) printf("%d\t",  size[i]);    printf("\n");
+                                                         ^~~~~~
+mitochondria18.c:259:4: warning: this 'for' clause does not guard... [-Wmisleadi
+ng-indentation]
+    for(i = 0; i < ps; i++) printf("%d\t",  farm[i]);    printf("\n");
+    ^~~
+mitochondria18.c:259:57: note: ...this statement, but the latter is misleadingly
+ indented as if it is guarded by the 'for'
+    for(i = 0; i < ps; i++) printf("%d\t",  farm[i]);    printf("\n");
+                                                         ^~~~~~
+mitochondria18.c:260:4: warning: this 'for' clause does not guard... [-Wmisleadi
+ng-indentation]
+    for(i = 0; i < ps; i++) printf("%lf\t", harvest[i]); printf("\n");
+    ^~~
+mitochondria18.c:260:57: note: ...this statement, but the latter is misleadingly
+ indented as if it is guarded by the 'for'
+    for(i = 0; i < ps; i++) printf("%lf\t", harvest[i]); printf("\n");
+                                                         ^~~~~~
+mitochondria18.c:261:4: warning: this 'for' clause does not guard... [-Wmisleadi
+ng-indentation]
+    for(i = 0; i < ps; i++) printf("%lf\t", farming[i]); printf("\n");
+    ^~~
+mitochondria18.c:261:57: note: ...this statement, but the latter is misleadingly
+ indented as if it is guarded by the 'for'
+    for(i = 0; i < ps; i++) printf("%lf\t", farming[i]); printf("\n");
+                                                         ^~~~~~
+mitochondria18.c:262:4: warning: this 'for' clause does not guard... [-Wmisleadi
+ng-indentation]
+    for(i = 0; i < ps; i++) printf("%lf\t", cost[i]);    printf("\n");
+    ^~~
+mitochondria18.c:262:57: note: ...this statement, but the latter is misleadingly
+ indented as if it is guarded by the 'for'
+    for(i = 0; i < ps; i++) printf("%lf\t", cost[i]);    printf("\n");
+                                                         ^~~~~~
+
+C:\Users\Judit\Documents\Mitochondria>gcc -o m.exe mitochondria18.c -O3 -std=gnu99 -Wno-unused -LC:\Users\Judit\Documents\Mitochondria\gsl-1.8-lib\lib -lm -lgsl -IC:\Users\Judit\Documents\Mitochondria\gsl-1.8-lib\include -IC:\Users\Judit\Documents\Mitochondria
+
+C:\Users\Judit\Documents\Mitochondria>m.exe
+
+C:\Users\Judit\Documents\Mitochondria>gcc -o m.exe mitochondria18.c -O3 -std=gnu
+99 -Wno-unused -LC:\Users\Judit\Documents\Mitochondria\gsl-1.8-lib\lib -LD:\temp
+\gsl-1.8-lib\lib -lm -lgsl -IC:\Users\Judit\Documents\Mitochondria\gsl-1.8-lib\i
+nclude -IC:\Users\Judit\Documents\Mitochondria
+
+C:\Users\Judit\Documents\Mitochondria>m.exe
+
+C:\Users\Judit\Documents\Mitochondria>gcc -o m.exe mitochondria18.c -O3 -std=gnu
+99 -Wno-unused -LC:\Users\Judit\Documents\Mitochondria\gsl-1.8-lib\lib -LD:\temp
+\gsl-1.8-lib\lib -lm -lgsl -l:libws2_32.a -lgslcblas -IC:\Users\Judit\Documents\
+Mitochondria\gsl-1.8-lib\include -IC:\Users\Judit\Documents\Mitochondria
+
+C:\Users\Judit\Documents\Mitochondria>m.exe
+
+C:\Users\Judit\Documents\Mitochondria>gcc -o m.exe mitochondria18.c -O3 -std=gnu
+99 -Wno-unused -LC:\Users\Judit\Documents\Mitochondria\gsl-1.8-lib\lib -LD:\temp
+\gsl-1.8-lib\lib -lm -lgsl -IC:\Users\Judit\Documents\Mitochondria\gsl-1.8-lib\i
+nclude -IC:\Users\Judit\Documents\Mitochondria
+
+C:\Users\Judit\Documents\Mitochondria>m.exe
+
+C:\Users\Judit\Documents\Mitochondria>mingw
+'mingw' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Judit\Documents\Mitochondria>m.exe
+
+C:\Users\Judit\Documents\Mitochondria>m.exe
+
+C:\Users\Judit\Documents\Mitochondria>m.exe
+ERROR. Parameter file parameters.cfg does not exist. Aborting.
+
+C:\Users\Judit\Documents\Mitochondria>m.exe
+
+C:\Users\Judit\Documents\Mitochondria>
+
+Compiling:
+C:\Users\Judit\Documents\Mitochondria>gcc -o m.exe mitochondria_Copulate.c -O3 -std=gnu99 -Wno-unused -LC:\Users\Judit\Documents\Mitochondria\gsl-1.8-lib\lib -lm -lgsl -IC:\Users\Judit\Documents\Mitochondria\gsl-1.8-lib\include -IC:\Users\Judit\Documents\Mitochondria
+		gcc -o m.exe mitochondria18.c -O3 -std=gnu99 -Wno-unused -LC:\Users\Judit\Documents\Mitochondria\gsl-1.8-lib\lib -lm -lgsl -IC:\Users\Judit\Documents\Mitochondria\gsl-1.8-lib\include -IC:\Users\Judit\Documents\Mitochondria
+
+gcc -o m.exe mitochondria_Copulate.c -O3 -std=gnu99 -Wno-unused -LC:\Users\Judit\Documents\mitochondriacopulation\gsl-1.8-lib\lib -lm -lgsl -IC:\Users\Judit\Documents\mitochondriacopulation\gsl-1.8-lib\include -IC:\Users\Judit\Documents\mitochondriacopulation
+gcc -o m.exe mitochondria18.c -O3 -std=gnu99 -Wno-unused -LC:\Users\Judit\Documents\mitochondriacopulation\gsl-1.8-lib\lib -lm -lgsl -IC:\Users\Judit\Documents\mitochondriacopulation\gsl-1.8-lib\include -IC:\Users\Judit\Documents\mitochondriacopulation
+
+gcc -o m.exe mitochondria_Copulate.c dataforpr.dat -O3 -std=gnu99 -Wno-unused -LC:\Users\Judit\Documents\mitochondriacopulation\gsl-1.8-lib\lib -lm -lgsl -IC:\Users\Judit\Documents\mitochondriacopulation\gsl-1.8-lib\include -IC:\Users\Judit\Documents\mitochondriacopulation
+
+C:\Users\Judit\Source\Repos\MitochondriaGraph>
+
+rscript script2.R noevol_initfarmingrate05_ppl_05  data_mitochondria18.c_noevol_initfarmingrate05_ppl_05_0.dat data_mitochondria18.c_noevol_initfarmingrate05_ppl_05_1.dat data_mitochondria_Copulate.c_noevol_initfarmingrate05_ppl_05_0.dat data_mitochondria_Copulate.c_noevol_initfarmingrate05_ppl_05_1.dat data_mitochondria_Copulate.c_noevol_initfarmingrate05_ppl_05_2.dat
+
+automatedScript.R evol_initfarmingrate01_sd004_ppl05 data_mitochondria18.c_evol_initfarmingrate01_sd004_ppl05_0.dat data_mitochondria18.c_evol_initfarmingrate01_sd004_ppl05_1.dat data_mitochondria18.c_evol_initfarmingrate01_sd004_ppl05_2.dat data_mitochondria18.c_evol_initfarmingrate01_sd004_ppl05_3.dat data_mitochondria18.c_evol_initfarmingrate01_sd004_ppl05_4.dat data_mitochondria_Copulate.c_evol_initfarmingrate01_sd004_ppl05_0.dat data_mitochondria_Copulate.c_evol_initfarmingrate01_sd004_ppl05_1.dat data_mitochondria_Copulate.c_evol_initfarmingrate01_sd004_ppl05_2.dat data_mitochondria_Copulate.c_evol_initfarmingrate01_sd004_ppl05_3.dat data_mitochondria_Copulate.c_evol_initfarmingrate01_sd004_ppl05_4.dat
+
+rscript automatedScript.R noevol_initfarmingrate05_ppl_05  data_mitochondria18.c_noevol_initfarmingrate05_ppl_05_0.dat data_mitochondria18.c_noevol_initfarmingrate05_ppl_05_1.dat data_mitochondria_Copulate.c_noevol_initfarmingrate05_ppl_05_0.dat data_mitochondria_Copulate.c_noevol_initfarmingrate05_ppl_05_1.dat data_mitochondria_Copulate.c_noevol_initfarmingrate05_ppl_05_2.dat
+
+g++ -o m.exe Mitochondria.cpp log.cpp main.cpp MitoMath.cpp Parameters.cpp Population.cpp randomGenerator.cpp Waves.cpp -O3 -std=c++0x -Wno-unused -LC:\Users\Judit\Documents\farmingModelVSProject\farmingmodelvsproject\mithocondrium-vs2013\gsl-1.8-lib\lib -lm -lgsl -IC:\Users\Judit\Documents\farmingModelVSProject\farmingmodelvsproject\mithocondrium-vs2013\gsl-1.8-lib\include -IC:\Users\Judit\Documents\farmingModelVSProject\farmingmodelvsproject\mithocondrium-vs2013\mitochondria\mitochondria
+
+rscript automatedScript.R outdataTrial outdataTrial0_nosex.dat outdataTrial1_nosex.dat outdataTrial2_nosex.dat outdataTrial3_nosex.dat outdataTrial4_nosex.dat outdataTrial5_nosex.dat outdataTrial6_nosex.dat outdataTrial7_nosex.dat outdataTrial8_nosex.dat outdataTrial9_nosex.dat outdataTrial0_sex.dat outdataTrial1_sex.dat outdataTrial2_sex.dat outdataTrial3_sex.dat outdataTrial4_sex.dat outdataTrial5_sex.dat outdataTrial6_sex.dat outdataTrial7_sex.dat outdataTrial8_sex.dat outdataTrial9_sex.dat 
+rscript script1.R outdataTrial outdataTrial0_nosex.dat outdataTrial1_nosex.dat outdataTrial2_nosex.dat outdataTrial3_nosex.dat outdataTrial4_nosex.dat outdataTrial5_nosex.dat outdataTrial6_nosex.dat outdataTrial7_nosex.dat outdataTrial8_nosex.dat outdataTrial9_nosex.dat outdataTrial0_sex.dat outdataTrial1_sex.dat outdataTrial2_sex.dat outdataTrial3_sex.dat outdataTrial4_sex.dat outdataTrial5_sex.dat outdataTrial6_sex.dat outdataTrial7_sex.dat outdataTrial8_sex.dat outdataTrial9_sex.dat 
