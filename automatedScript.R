@@ -2,6 +2,7 @@
 fileNames = commandArgs(trailingOnly = TRUE)
 
 #set working directory
+#directoryPath <- paste("C:\\Users\\Judit\\Documents\\parasiteModelVSProject\\parasitemodelvsproject\\mithocondrium-vs2013\\mitochondria\\bin\\results\\", fileNames[1], sep = "")
 directoryPath <- paste("C:\\Users\\Judit\\Documents\\parasiteModelVSProject\\parasitemodelvsproject\\mithocondrium-vs2013\\mitochondria\\bin\\results\\", fileNames[1], sep = "")
 setwd(directoryPath)
 
@@ -85,6 +86,16 @@ listOfInterval3Vectors_FromData <- lapply(dataFramesList, function(x) x[, "inter
 list2env(listOfInterval3Vectors_FromData, envir = .GlobalEnv)
 mean_interval3vector <- rowMeans(sapply(listOfInterval3Vectors_FromData, function(x) x))
 
+#interval4 values
+listOfInterval4Vectors_FromData <- lapply(dataFramesList, function(x) x[, "interval4"])
+list2env(listOfInterval4Vectors_FromData, envir = .GlobalEnv)
+mean_interval4vector <- rowMeans(sapply(listOfInterval4Vectors_FromData, function(x) x))
+
+#interval5 values
+listOfInterval5Vectors_FromData <- lapply(dataFramesList, function(x) x[, "interval5"])
+list2env(listOfInterval5Vectors_FromData, envir = .GlobalEnv)
+mean_interval5vector <- rowMeans(sapply(listOfInterval5Vectors_FromData, function(x) x))
+
 #sex
 
 #cNoDigest values
@@ -127,6 +138,21 @@ listOfInterval3Vectors_FromDataCop <- lapply(dataFramesCopList, function(x) x[, 
 list2env(listOfInterval3Vectors_FromData, envir = .GlobalEnv)
 mean_interval3vectorcop <- rowMeans(sapply(listOfInterval3Vectors_FromData, function(x) x))
 
+#interval3 values
+listOfInterval3Vectors_FromDataCop <- lapply(dataFramesCopList, function(x) x[, "interval3"])
+list2env(listOfInterval3Vectors_FromData, envir = .GlobalEnv)
+mean_interval3vectorcop <- rowMeans(sapply(listOfInterval3Vectors_FromData, function(x) x))
+
+#interval4 values
+listOfInterval4Vectors_FromDataCop <- lapply(dataFramesCopList, function(x) x[, "interval4"])
+list2env(listOfInterval4Vectors_FromData, envir = .GlobalEnv)
+mean_interval4vectorcop <- rowMeans(sapply(listOfInterval4Vectors_FromData, function(x) x))
+
+#interval5 values
+listOfInterval5Vectors_FromDataCop <- lapply(dataFramesCopList, function(x) x[, "interval5"])
+list2env(listOfInterval5Vectors_FromData, envir = .GlobalEnv)
+mean_interval5vectorcop <- rowMeans(sapply(listOfInterval5Vectors_FromData, function(x) x))
+
 timevector <- dataFramesList[[1]][, "t"]
 
 # Give the chart file a name.
@@ -166,24 +192,28 @@ png(file = paste("line_chart__parasites_", fileNames[1], ".jpg"), width = 2000, 
 par(mfrow = c(2, 1))
 
 # Plot the bar chart.
-plot(timevector, mean_interval0vector, type = "o", col = "red",
+plot(timevector, mean_interval0vector, type = "o", col = "springgreen",
      xlim = c(0, maxTimeStep), ylim = c(0, populationSize),
      xlab = "Time", ylab = "Parasite number in the host cells",
      main = "Parasite number distribution - copulation")
 
-lines(timevector, mean_interval1vector, type = "o", col = "blue")
-lines(timevector, mean_interval2vector, type = "o", col = "green")
-lines(timevector, mean_interval3vector, type = "o", col = "black")
+lines(timevector, mean_interval1vector, type = "o", col = "yellow1")
+lines(timevector, mean_interval2vector, type = "o", col = "yellow4")
+lines(timevector, mean_interval3vector, type = "o", col = "orange")
+lines(timevector, mean_interval4vector, type = "o", col = "orangered")
+lines(timevector, mean_interval5vector, type = "o", col = "red")
 
 # Plot the bar chart.
-plot(timevector, mean_interval0vectorcop, type = "o", col = "red",
+plot(timevector, mean_interval0vectorcop, type = "o", col = "springgreen",
      xlim = c(0, maxTimeStep), ylim = c(0, populationSize),
      xlab = "Time", ylab = "Parasite number in the host cells",
      main = "Parasite number distribution - no copulation")
 
-lines(timevector, mean_interval1vectorcop, type = "o", col = "blue")
-lines(timevector, mean_interval2vectorcop, type = "o", col = "green")
-lines(timevector, mean_interval3vectorcop, type = "o", col = "black")
+lines(timevector, mean_interval1vectorcop, type = "o", col = "yellow1")
+lines(timevector, mean_interval2vectorcop, type = "o", col = "yellow4")
+lines(timevector, mean_interval3vectorcop, type = "o", col = "orange")
+lines(timevector, mean_interval4vector, type = "o", col = "orangered")
+lines(timevector, mean_interval5vector, type = "o", col = "red")
 
 # Save the file.
 dev.off()
