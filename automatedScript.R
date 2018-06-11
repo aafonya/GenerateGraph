@@ -1,3 +1,6 @@
+if (!require(ggplot2)) install.packages('ggplot2')
+library(ggplot2)
+
 #read file names from command line
 fileNames = commandArgs(trailingOnly = TRUE)
 
@@ -5,11 +8,13 @@ fileNames = commandArgs(trailingOnly = TRUE)
 #directoryPath <- paste("C:\\Users\\Judit\\Documents\\parasiteModelVSProject\\parasitemodelvsproject\\mithocondrium-vs2013\\mitochondria\\bin\\results\\", fileNames[1], sep = "")
 directoryPath <- paste("C:\\Users\\Judit\\Documents\\parasiteModelVSProject\\parasitemodelvsproject\\mithocondrium-vs2013\\mitochondria\\bin\\results\\", fileNames[1], sep = "")
 setwd(directoryPath)
+print(directoryPath)
 
 #read config data
 configData <- read.delim("parameters.cfg", FALSE, "/")
 
 maxTimeStep <- configData[2, "V1"]
+print(maxTimeStep)
 populationSize <- configData[4, "V1"]
 
 #read header
@@ -214,10 +219,39 @@ lines(timevector, mean_interval2vectorcop, type = "o", col = "yellow4")
 lines(timevector, mean_interval3vectorcop, type = "o", col = "orange")
 lines(timevector, mean_interval4vector, type = "o", col = "orangered")
 lines(timevector, mean_interval5vector, type = "o", col = "red")
-
+#print(listOfInterval4Vectors_FromDataCop[[1]])
+#print(mean_interval4vector)
 # Save the file.
 dev.off()
 
+#listOfInterval4Vectors_FromData[1][, "interval3"]
+png("triaaal.jpg")
+plot(timevector, dataFramesList[[1]][, "interval4"],
+     type = "o", col = "springgreen",
+     xlim = c(0, maxTimeStep), ylim = c(0, populationSize),
+     xlab = "Time", ylab = "Parasite number in the host cells",
+     main = "Parasite number distribution - no copulation")
+dev.off()
+
+png("triaaal.jpg")
+plot(timevector, dataFramesList[[1]][, "interval4"],
+     type = "o", col = "springgreen",
+     xlim = c(0, maxTimeStep), ylim = c(0, populationSize),
+     xlab = "Time", ylab = "Parasite number in the host cells",
+     main = "Parasite number distribution - no copulation")
+dev.off()
+
+# Give the chart file a name.
+#" line_chart__mean_noevol_initfarmingrate05_ppl_05.jpg "
+#png(file = paste("line_chart__ggplot_", fileNames[1], ".jpg"), width = 2000, height = 1000)
+
+
+ggplot(data = dataFramesList[[1]], aes(x = t, y = interval4)) +
+    geom_line(color = "#00AFBB", size = 2)
+filename <- paste("line_chart__ggplot_", fileNames[1], ".jpg")
+ggsave(filename)
+# Save the file.
+#dev.off()
 
 #print(dataFramesCopList[[1]][1, ])
 #print(length(dataFramesList[[1]]))
